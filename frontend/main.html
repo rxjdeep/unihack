@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Main App</title>
+</head>
+
+<body style="font-family: sans-serif; text-align:center; margin-top:100px;">
+
+<h1>Welcome to Cheap Grocery Finder</h1>
+
+<p>You are now logged in. (we hope)</p>
+
+<p>This is a temporary test page.</p>
+
+<button onclick="logout()">Logout</button>
+
+<script>
+function logout() {
+  localStorage.removeItem("user")
+  window.location.href = "/index.html"
+}
+</script>
+
+</body>
+</html>
