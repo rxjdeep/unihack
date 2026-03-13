@@ -24,8 +24,8 @@
 </head>
 
 <body>
-<audio autoplay loop muted>
-  <source src="workin.m4a" type="audio/mpeg">
+<audio id="bgmusic" loop>
+  <source src="workin.m4a" type="audio/mp4">
 </audio>
 
 <h1>Welcome to Cheap Grocery Finder</h1>
@@ -43,6 +43,11 @@ function logout() {
   localStorage.removeItem("user")
   window.location.href = "/index.html"
 }
+const music = document.getElementById("bgmusic")
+
+document.addEventListener("click", () => {
+  music.play()
+}, { once: true })
 </script>
 
 <label for="foods">Choose a food:</label> <br>
