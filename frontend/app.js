@@ -97,3 +97,4 @@ async function savePrefs() {
 
 window.signup = signup
 window.login = login
+window.savePrefs = savePrefs
