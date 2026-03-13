@@ -8,11 +8,7 @@
 
 <h1>Welcome to Cheap Grocery Finder</h1>
 
-<p>You are now logged in. (we hope)</p>
-
-<p>This is a temporary test page.</p>
-
-<button onclick="logout()">Logout</button>
+<p>You are now logged in<p>
 
 <script>
 const user = localStorage.getItem("user")
@@ -27,6 +23,61 @@ function logout() {
 }
 
 </script>
+
+<label for="foods">Choose a food:</label> <br>
+
+
+<h1>Bakery</h1>
+<label><input type="checkbox" value="bread"> Bread</label><br>
+<label><input type="checkbox" value="bagels"> Bagels</label><br>
+<label><input type="checkbox" value="muffins"> Muffins</label><br>
+
+<h1>Dairy Items</h1>
+<label><input type="checkbox" value="milk"> Milk</label><br>
+<label><input type="checkbox" value="soy milk"> Soy Milk</label><br>
+<label><input type="checkbox" value="cheese"> Cheese</label><br>
+<label><input type="checkbox" value="yogurt"> Yogurt</label><br>
+
+<h1>Meat</h1>
+<label><input type="checkbox" value="chicken"> Chicken</label><br>
+<label><input type="checkbox" value="beef"> Beef</label><br>
+<label><input type="checkbox" value="pork"> Pork</label><br>
+<label><input type="checkbox" value="eggs"> Eggs</label><br>
+
+<h1>Fruits</h1>
+<label><input type="checkbox" value="apples"> Apples</label><br>
+<label><input type="checkbox" value="bananas"> Bananas</label><br>
+<label><input type="checkbox" value="oranges"> Oranges</label><br>
+<label><input type="checkbox" value="grapes"> Grapes</label><br>
+
+<h1>Vegetables</h1>
+<label><input type="checkbox" value="lettuce"> Lettuce</label><br>
+<label><input type="checkbox" value="spinach"> Spinach</label><br>
+<label><input type="checkbox" value="tomatoes"> Tomatoes</label><br>
+<label><input type="checkbox" value="carrots"> Carrots</label><br>
+<label><input type="checkbox" value="potatoes"> Potatoes</label><br>
+
+<h1>Pantry</h1>
+<label><input type="checkbox" value="bread"> Bread</label><br>
+<label><input type="checkbox" value="rice"> Rice</label><br>
+<label><input type="checkbox" value="pasta"> Pasta</label><br>
+<label><input type="checkbox" value="flour"> Flour</label><br>
+<label><input type="checkbox" value="sugar"> Sugar</label><br>
+<label><input type="checkbox" value="cereal"> Cereal</label><br>
+
+<h1>Drinks </h1>
+<label><input type="checkbox" value="water"> Water</label><br>
+<label><input type="checkbox" value="juice"> Juice</label><br>
+<label><input type="checkbox" value="coffee"> Coffee</label><br>
+<label><input type="checkbox" value="tea"> Tea</label><br>
+
+
+<br><br>
+<button onclick="logout()">Logout</button>
+
+<!-- change the logout function to save() and search() because these buttons are all logout-->
+<button onclick="logout()">Save</button>
+<button onclick="logout()">Search</button>
 
 </body>
 </html>
