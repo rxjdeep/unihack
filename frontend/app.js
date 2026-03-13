@@ -49,14 +49,16 @@ async function login() {
 
 async function savePrefs() {
 
+  console.log("Save clicked")
+
   const username = localStorage.getItem("user")
 
   if (!username) {
-    alert("Not logged in")
+    alert("User not logged in")
     return
   }
 
-  // find the user id
+  // get user id
   const { data: userData, error: userError } = await supabase
     .from("users")
     .select("id")
@@ -65,23 +67,28 @@ async function savePrefs() {
 
   if (userError) {
     console.error(userError)
+    alert("User lookup failed")
     return
   }
 
   const userId = userData.id
 
-  // get all checked boxes
+  // get checked foods
   const checkedFoods = document.querySelectorAll("input[type='checkbox']:checked")
 
   for (const food of checkedFoods) {
 
-    await supabase
+    const { error } = await supabase
       .from("prefs")
       .insert({
         user_id: userId,
         item_name: food.value,
         checked: true
       })
+
+    if (error) {
+      console.error(error)
+    }
 
   }
 
