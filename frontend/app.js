@@ -47,5 +47,46 @@ async function login() {
   }
 }
 
+async function savePrefs() {
+
+  const username = localStorage.getItem("user")
+
+  if (!username) {
+    alert("Not logged in")
+    return
+  }
+
+  // find the user id
+  const { data: userData, error: userError } = await supabase
+    .from("users")
+    .select("id")
+    .eq("username", username)
+    .single()
+
+  if (userError) {
+    console.error(userError)
+    return
+  }
+
+  const userId = userData.id
+
+  // get all checked boxes
+  const checkedFoods = document.querySelectorAll("input[type='checkbox']:checked")
+
+  for (const food of checkedFoods) {
+
+    await supabase
+      .from("prefs")
+      .insert({
+        user_id: userId,
+        item_name: food.value,
+        checked: true
+      })
+
+  }
+
+  alert("Preferences saved!")
+}
+
 window.signup = signup
 window.login = login
