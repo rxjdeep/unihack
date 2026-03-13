@@ -63,7 +63,7 @@ async function savePrefs() {
     .from("users")
     .select("id")
     .eq("username", username)
-    .single()
+    .limit(1)
 
   if (userError) {
     console.error(userError)
