@@ -71,7 +71,7 @@ async function savePrefs() {
     return
   }
 
-  const userId = userData.id
+  const userId = userData[0].id
 
   // get checked foods
   const checkedFoods = document.querySelectorAll("input[type='checkbox']:checked")
