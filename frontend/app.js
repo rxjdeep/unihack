@@ -73,6 +73,12 @@ async function savePrefs() {
 
   const userId = userData[0].id
 
+  // remove old preferences
+await supabase
+  .from("prefs")
+  .delete()
+  .eq("user_id", userId)
+
   // get checked foods
   const checkedFoods = document.querySelectorAll("input[type='checkbox']:checked")
 
