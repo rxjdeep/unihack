@@ -2,13 +2,32 @@
 <html>
 <head>
   <title>Main App</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 100px;
+
+      background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif");
+
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+
+      color: white;
+    }
+  </style>
+
 </head>
 
-<body style="font-family: sans-serif; text-align:center; margin-top:100px;">
+<body>
 
 <h1>Welcome to Cheap Grocery Finder</h1>
 
-<p>You are now logged in<p>
+<p>You are now logged in</p>
 
 <script>
 const user = localStorage.getItem("user")
@@ -21,7 +40,6 @@ function logout() {
   localStorage.removeItem("user")
   window.location.href = "/index.html"
 }
-
 </script>
 
 <label for="foods">Choose a food:</label> <br>
@@ -73,9 +91,9 @@ function logout() {
 
 
 <br><br>
+
 <button onclick="logout()">Logout</button>
 
-<!-- change the logout function to save() and search() because these buttons are all logout-->
 <button onclick="savePrefs()">Save</button>
 <button onclick="searchFoods()">Search</button>
 
