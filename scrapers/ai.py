@@ -6,9 +6,23 @@ load_dotenv()
 
 exa = Exa(os.getenv("EXA_API_KEY"))
 
-results = exa.search(
-    "coles 3L whole milk price",
-    num_results=1
-)
+def search_product(query):
+    response = exa.search(query, num_results=1)
 
-print(results)
+    products = []
+
+    for r in response.results:
+        products.append({
+            "title": r.title,
+            "url": r.url
+        })
+
+    return products
+
+products = search_product("coles 3L whole milk price")
+
+print(products)
+
+
+
+
